@@ -1,5 +1,11 @@
 const mongoose = require('mongoose');
+
 const habitSchema = new mongoose.Schema({
+    id: {
+        type: String, 
+        required: true,
+        unique: true 
+    },
     name: {
         type: String,
         required: true
@@ -25,4 +31,6 @@ const habitSchema = new mongoose.Schema({
         required: true
     }
 });
+
+
 module.exports = mongoose.model('Habit', habitSchema);

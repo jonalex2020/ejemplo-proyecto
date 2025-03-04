@@ -56,10 +56,6 @@ MONGO_URI=mongodb+srv://jonalexmerida:%40L3x%40nd3rm3r1d408101986%C3%B1@cluster0
 PORT=3000
 ```
 
-💡 **Importante**:  
-Si tu contraseña tiene caracteres especiales (`@`, `ñ`, `%`), usa un [encoder de URL](https://www.urlencoder.org/) antes de agregarla.
-
----
 
 ## ▶ 4. Ejecutar el Proyecto
 
@@ -67,12 +63,6 @@ Para iniciar el servidor en modo desarrollo:
 
 ```sh
 npm start
-```
-
-Si usas **nodemon**, ejecuta:
-
-```sh
-npm run dev
 ```
 
 El servidor correrá en:
@@ -85,47 +75,115 @@ http://localhost:3000
 
 ## 🛠 5. Endpoints de la API
 
-### 📍 📌 Crear un nuevo hábito (POST)
-```http
+📌 Crear un nuevo hábito (POST)
+
 POST /habits
-```
-#### **📌 Body en JSON**
-```json
+
+📌 Body en JSON
+
 {
+    "id": "habit001",
     "name": "Hacer ejercicio",
-    "description": "Correr 30 minutos",
+    "description": "Correr 30 minutos todos los días",
     "frequency": 7,
     "duration": 30,
     "priority": 1,
     "completed": false
 }
-```
 
----
+✅ Respuesta esperada:
 
-### 📍 📌 Obtener todos los hábitos (GET)
-```http
+{
+    "success": true,
+    "message": "Hábito creado con éxito",
+    "habit": { ... }
+}
+
+📌 Obtener todos los hábitos (GET)
+
 GET /habits
-```
 
----
+✅ Respuesta esperada:
 
-## 🛡 6. Autenticación (Opcional)
-Si la API requiere autenticación, usa **JWT** o tokens de sesión.
+[
+    {
+        "id": "habit001",
+        "name": "Hacer ejercicio",
+        "description": "Correr 30 minutos todos los días",
+        "frequency": 7,
+        "duration": 30,
+        "priority": 1,
+        "completed": false
+    }
+]
 
----
+📌 Obtener un hábito por ID (GET)
 
-## 📝 7. Contribuir al Proyecto
+GET /habits/{id}
 
-1. **Haz un fork** del repositorio.
-2. Crea una nueva rama (`git checkout -b feature-nueva-funcionalidad`).
-3. Realiza tus cambios y **haz commit** (`git commit -m "Añadiendo nueva funcionalidad"`).
-4. **Sube tu rama** (`git push origin feature-nueva-funcionalidad`).
-5. Abre un **Pull Request** en GitHub.
+✅ Respuesta esperada:
 
----
+{
+    "id": "habit001",
+    "name": "Hacer ejercicio",
+    "description": "Correr 30 minutos todos los días",
+    "frequency": 7,
+    "duration": 30,
+    "priority": 1,
+    "completed": false
+}
 
-## 📚 8. Licencia
+📌 Actualizar un hábito por ID (PUT)
 
-Este proyecto está bajo la licencia **MIT**. Puedes modificarlo y usarlo libremente. 😊
+PUT /habits/{id}
+
+📌 Body en JSON
+
+{
+    "name": "Leer un libro",
+    "description": "Leer al menos 10 páginas al día",
+    "frequency": 5,
+    "duration": 20,
+    "priority": 2,
+    "completed": false
+}
+
+✅ Respuesta esperada:
+
+{
+    "success": true,
+    "message": "Hábito actualizado correctamente",
+    "habit": { ... }
+}
+
+📌 Eliminar un hábito por ID (DELETE)
+
+DELETE /habits/{id}
+
+✅ Respuesta esperada:
+
+{
+    "success": true,
+    "message": "Hábito eliminado correctamente"
+}
+
+🛡 6. Autenticación (Opcional)
+
+Si la API requiere autenticación, usa JWT o tokens de sesión.
+
+📝 7. Contribuir al Proyecto
+
+Haz un fork del repositorio.
+
+Crea una nueva rama (git checkout -b feature-nueva-funcionalidad).
+
+Realiza tus cambios y haz commit (git commit -m "Añadiendo nueva funcionalidad").
+
+Sube tu rama (git push origin feature-nueva-funcionalidad).
+
+Abre un Pull Request en GitHub.
+
+📄 8. Licencia
+
+Este proyecto está bajo la licencia MIT. Puedes modificarlo y usarlo libremente. 😊
 
