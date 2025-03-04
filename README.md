@@ -82,7 +82,7 @@ POST /habits
 📌 Body en JSON
 
 {
-    "id": "habit001",
+    "id": "habito01",
     "name": "Hacer ejercicio",
     "description": "Correr 30 minutos todos los días",
     "frequency": 7,
@@ -107,7 +107,7 @@ GET /habits
 
 [
     {
-        "id": "habit001",
+        "id": "habito01",
         "name": "Hacer ejercicio",
         "description": "Correr 30 minutos todos los días",
         "frequency": 7,
@@ -124,7 +124,7 @@ GET /habits/{id}
 ✅ Respuesta esperada:
 
 {
-    "id": "habit001",
+    "id": "habito01",
     "name": "Hacer ejercicio",
     "description": "Correr 30 minutos todos los días",
     "frequency": 7,
@@ -167,17 +167,14 @@ DELETE /habits/{id}
     "message": "Hábito eliminado correctamente"
 }
 
-🛡 6. Autenticación (Opcional)
 
-Si la API requiere autenticación, usa JWT o tokens de sesión.
-
-📝 7. Contribuir al Proyecto
+📝 6. Contribuir al Proyecto
 
 Haz un fork del repositorio.
 
 Crea una nueva rama (git checkout -b feature-nueva-funcionalidad).
 
-Realiza tus cambios y haz commit (git commit -m "Añadiendo nueva funcionalidad").
+Realiza cambios y haz commit (git commit -m "Añadiendo nueva funcionalidad").
 
 Sube tu rama (git push origin feature-nueva-funcionalidad).
 
